@@ -1,11 +1,27 @@
-# docker-wordpress-wp-cli
+# docker-cuaws-wpcua
+this is the base image we customized for our local wordpress dev workflow found here https://webint.internal.cubase.org/kb/tony-dockerclisshkey-2017-workflow/
+
+To modify this base image
+clone this repo
+edit the dockerfile
+docker build
+docker run to test
+docker commit 
+docker push
+
+for a tutorial. https://docs.docker.com/engine/tutorials/dockerimages/
+
+*for now Tony and Dave have write permissions on our dockerhub cuaws organization. ask them to add you if you need to write.*
+
+
+# based on docker-wordpress-wp-cli
 This repository contains the Dockerfile for the autobuild of [wordpress-with-wp-cli](https://registry.hub.docker.com/u/timbutler/wordpress-with-wp-cli/) Docker image.
 
 The Dockerfile uses the official WordPress image and adds [wp-cli](http://wp-cli.org/).
 
 To use, simply run: 
 
-    docker run --name <containername> conetix/wordpress-with-wp-cli
+    docker run --name <containername> cuaws/wpcua
 
 For all other configuration items, please see the official Docker WordPress [ReadMe](https://github.com/docker-library/docs/tree/master/wordpress).
 
