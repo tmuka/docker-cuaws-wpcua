@@ -14,7 +14,10 @@ mysql-client \
 openssh-client \
 vim-tiny \
 rsync \
-&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+libldap2-dev \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
+&& docker-php-ext-install ldap
 
 
 # Add WP-CLI 
