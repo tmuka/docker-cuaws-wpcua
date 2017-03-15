@@ -2,6 +2,7 @@
 # Installs WordPress with wp-cli (wp.cli.org) installed and support for mysql, ssh, less, wp-cli, vim-tiny, rsync
 # Docker Hub: https://registry.hub.docker.com/u/tmuka/wpcua/
 # Github Repo: https://github.com/conetix/docker-wordpress-wp-cli
+# https://github.com/tmuka/docker-cuaws-wpcua.git
 
 FROM wordpress:latest
 MAINTAINER Tony Muka <tmuka@cuanswers.com>
