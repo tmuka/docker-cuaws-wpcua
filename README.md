@@ -1,5 +1,5 @@
 # docker-cuaws-wpcua
-this is the base image we customized for our local wordpress dev workflow found here https://webint.internal.cubase.org/kb/tony-dockerclisshkey-2017-workflow/
+this is the base image we customized for our local wordpress dev workflow found on internal only webint/kb/tony-dockerclisshkey-2017-workflow/
 
 To modify this base image
 clone this repo
