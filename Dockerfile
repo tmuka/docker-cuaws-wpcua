@@ -4,7 +4,9 @@
 # Github Repo: https://github.com/conetix/docker-wordpress-wp-cli
 # https://github.com/tmuka/docker-cuaws-wpcua.git
 
-FROM wordpress:latest
+#FROM wordpress:latest
+#switching to php7.2-apache tag since :latest stopped working for auto build triggers
+FROM wordpress:php7.2-apache
 MAINTAINER Tony Muka <tmuka@cuanswers.com>
 
 # Add sudo in order to run wp-cli as the www-data user 
