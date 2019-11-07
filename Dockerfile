@@ -13,7 +13,7 @@ MAINTAINER Tony Muka <tmuka@cuanswers.com>
 RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 less \
-mysql-client \
+mariadb-client \
 openssh-client \
 vim-tiny \
 rsync \
