@@ -21,11 +21,13 @@ rsync \
 libldap2-dev \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
-&& docker-php-ext-install ldap \
-&& sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -subj "/C=US/ST=MI/L=Grand Rapids/O=.../OU=.../CN=.../emailAddress=..."  -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem \
-&& a2enmod ssl \
-&& a2ensite default-ssl.conf \
-&& service apache2 reload
+&& docker-php-ext-install ldap 
+
+# setup https with self-signed cert for apache
+#RUN sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -subj "/C=US/ST=MI/L=Grand Rapids/O=.../OU=.../CN=.../emailAddress=..."  -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem \
+#&& a2enmod ssl \
+#&& a2ensite default-ssl.conf \
+#&& service apache2 reload
 
 # Add WP-CLI 
 RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
