@@ -22,7 +22,7 @@ libldap2-dev \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
 && docker-php-ext-install ldap \
-&& sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/certs/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem \
+&& sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -subj "/C=US/ST=MI/L=Grand Rapids/O=.../OU=.../CN=.../emailAddress=..."  -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem \
 && a2enmod ssl \
 && a2ensite default-ssl.conf \
 && apache2ctl graceful \
