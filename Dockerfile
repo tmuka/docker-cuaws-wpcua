@@ -25,9 +25,7 @@ libldap2-dev \
 && sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -subj "/C=US/ST=MI/L=Grand Rapids/O=.../OU=.../CN=.../emailAddress=..."  -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem \
 && a2enmod ssl \
 && a2ensite default-ssl.conf \
-&& apache2ctl graceful \
-&& alias vim='vim.tiny' \
-&& alias ll='ls -al'
+&& service apache2 reload
 
 # Add WP-CLI 
 RUN curl -o /bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
