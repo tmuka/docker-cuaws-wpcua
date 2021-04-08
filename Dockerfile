@@ -6,8 +6,10 @@
 
 #FROM wordpress:latest
 #switching to php7.2-apache tag since :latest stopped working for auto build triggers
-FROM wordpress:php7.3-apache
+#FROM wordpress:php7.3-apache
 #FROM wordpress:php7.4-apache
+# temporarily pinned to the 5.6.2 release to work around https://github.com/docker-library/wordpress/issues/594
+FROM  wordpress:5.6.2-php7.4-apache
 MAINTAINER Tony Muka <tmuka@cuanswers.com>
 
 # Add sudo in order to run wp-cli as the www-data user 
