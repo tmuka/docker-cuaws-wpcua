@@ -10,6 +10,8 @@
 FROM wordpress:php7.4-apache
 MAINTAINER Tony Muka <tmuka@cuanswers.com>
 
+ENV PHP_MEMORY_LIMIT=512M
+
 # Add sudo in order to run wp-cli as the www-data user 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
