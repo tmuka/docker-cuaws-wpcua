@@ -7,7 +7,8 @@
 #FROM wordpress:latest
 #switching to php7.2-apache tag since :latest stopped working for auto build triggers
 #FROM wordpress:php7.3-apache
-FROM wordpress:5.8.1-php7.4-apache
+#FROM wordpress:5.8.2-php7.4-apache
+FROM wordpress:5-php8.0-apache
 MAINTAINER Tony Muka <tmuka@cuanswers.com>
 
 ENV PHP_MEMORY_LIMIT=512M
