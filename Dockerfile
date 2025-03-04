@@ -9,7 +9,7 @@
 #FROM wordpress:php7.3-apache
 #FROM wordpress:5.8.2-php7.4-apache
 FROM wordpress:6-php8.2-apache
-MAINTAINER Tony Muka <tmuka@cuanswers.com>
+LABEL org.opencontainers.image.authors="tmuka@cuanswers.com"
 
 ENV PHP_MEMORY_LIMIT=512M
 
