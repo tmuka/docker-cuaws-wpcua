@@ -6,5 +6,5 @@ docker build --no-cache -t cuaws/wpcua:latest -t cuaws/wpcua:$(date +%Y%m%d%H%M%
 # docker login --username=$DOCKER_USER --password=$DOCKER_PASS $DOCKER_HOST
 # echo docker login --username=$DOCKER_USER --password=$DOCKER_PASS 
 echo "NOW YOU MUST MANUALLY RUN..."
-echo "docker login && docker push cuaws/wpcua"
+echo "docker login -u tmuka && docker push cuaws/wpcua"
 
