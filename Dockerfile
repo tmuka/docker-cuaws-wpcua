@@ -14,11 +14,11 @@ LABEL org.opencontainers.image.authors="tmuka@cuanswers.com"
 ENV PHP_MEMORY_LIMIT=512M
 
 # Install the ca-certificate package
-RUN apt-get update && apt-get install -y ca-certificates
+#RUN apt-get update && apt-get install -y ca-certificates
 # Copy the CA certificate from the context to the build container
-COPY cua_ca_certificate.crt /usr/local/share/ca-certificates/
+#COPY cua_ca_certificate.crt /usr/local/share/ca-certificates/
 # Update the CA certificates in the container
-RUN update-ca-certificates
+#RUN update-ca-certificates
 
 # Add sudo in order to run wp-cli as the www-data user 
 RUN apt-get update && apt-get install -y --no-install-recommends \
