@@ -1,15 +1,19 @@
 # docker-cuaws-wpcua
 this is the base image we customized for our local wordpress dev workflow found on internal only webint/kb/tony-dockerclisshkey-2017-workflow/
 
-To modify this base image
-clone this repo
-edit the dockerfile
-docker build
-docker run to test
-docker commit 
-docker push
+## Updating the image
 
-for a tutorial. https://docs.docker.com/engine/tutorials/dockerimages/
+The Dockerfile uses the floating `wordpress:7-php8.4-apache` tag, so picking up a new
+WordPress or PHP patch release only needs a rebuild, not an edit.
+
+1. Clone this repo and edit the Dockerfile if needed.
+2. Run `./build.sh`. It builds with `--no-cache` and tags the image `cuaws/wpcua:latest`
+   plus a dated tag (e.g. `cuaws/wpcua:20261125094907`).
+3. Smoke test it, e.g.
+   `docker run --rm --entrypoint sh cuaws/wpcua:latest -c 'php -v; wp --allow-root --version'`
+4. Push both tags, using the commands `build.sh` prints at the end. The dated tag is the
+   rollback point if `:latest` misbehaves. No `docker login` is needed when Docker Desktop's
+   credential store is set up.
 
 *for now Tony and Dave have write permissions on our dockerhub cuaws organization. ask them to add you if you need to write.*
 
